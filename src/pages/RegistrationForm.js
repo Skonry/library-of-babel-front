@@ -49,7 +49,7 @@ function RegistrationForm() {
             name="password"
             rules={[
               {required: true, message: 'Password is required'},
-              {min: 3, message: 'Password must be 6 characters or more'},
+              {min: 6, message: 'Password must be 6 characters or more'},
               {max: 32, message: 'Password must be 128 characters or less'}
             ]}
           >
