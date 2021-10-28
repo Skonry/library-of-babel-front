@@ -7,7 +7,7 @@ import store from './store';
 import { loadUserDate } from './store/features/users';
 
 export const api = new Kitsu({
-  baseURL: 'http://localhost:3001',
+  baseURL: process.env.API_URL ? process.env.API_URL : 'http://localhost:3001',
   headers: {
     Authorization: sessionStorage.getItem('token')
   },
