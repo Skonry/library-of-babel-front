@@ -1,6 +1,8 @@
 import { api } from '../../../index.js';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+const API_URL = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : 'http://localhost:3001'
+
 const postRequest = async (path, data) => {
   try {
     const response = await fetch(path, {
@@ -28,7 +30,7 @@ const authenticate = (response) => {
 export const authenticateUser = createAsyncThunk(
   'users/authenticateUser',
   async (user) => {
-    const response = await postRequest('http://localhost:3001/authenticate', user);
+    const response = await postRequest(API_URL + '/authenticate', user);
     authenticate(response);
     return response.user;
   }
@@ -37,7 +39,7 @@ export const authenticateUser = createAsyncThunk(
 export const registerUser = createAsyncThunk(
   'users/registerUser',
   async (user) => {
-    const response = await postRequest('http://localhost:3001/register', user);
+    const response = await postRequest(API_URL + '/register', user);
     authenticate(response);
     return response.user;
   }
