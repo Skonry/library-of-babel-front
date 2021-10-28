@@ -15,7 +15,7 @@ A live demo can be viewed here:
 
 - Node.js and NPM
 - Git
-- Set up of API project: <https://github.com/Skonry/books-api>
+- Set up of API project: <https://github.com/Skonry/library-of-babel-api>
 
 ### Installation
 
